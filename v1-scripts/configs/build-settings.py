@@ -4,6 +4,7 @@
 
 MACHINES = {
   'Lowrider/SKR1.3_T8_16T_LCD_32step_DualDrivers': { 'env': 'LPC1768', 'out': 'firmware.bin' },
+  'Lowrider/SKR1.3_T8_16T_LCD_32step_Sensorless': { 'env': 'LPC1768', 'out': 'firmware.bin' },
   'MPCNC/Archim1_T8_16T_LCD': { 'env': 'DUE', 'out': 'firmware.bin' },
   'MPCNC/Archim1_T8_16T_LCD_DualEndstop': { 'env': 'DUE', 'out': 'firmware.bin' },
   'MPCNC/Archim2_T8_16T_LCD_16step': { 'env': 'DUE', 'out': 'firmware.bin' },

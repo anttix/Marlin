@@ -1,0 +1,46 @@
+#!/bin/bash
+
+set -e
+
+incdir=$(dirname $0)/..
+
+restore_configs
+opt_enable SHOW_CUSTOM_BOOTSCREEN
+
+. $incdir/base-cnc-config
+. $incdir/tmc2209
+. $incdir/dual-drivers-on-yz
+
+# For some weird reason TMC2209 directions are reversed on SKR1.3 boards
+opt_set INVERT_X_DIR true
+opt_set INVERT_Y_DIR false
+opt_set INVERT_Z_DIR true
+
+opt_set MOTHERBOARD BOARD_BTT_SKR_V1_3
+opt_set SERIAL_PORT "-1"
+
+opt_set DEFAULT_AXIS_STEPS_PER_UNIT "{ 200, 200, 800, 200 }"
+opt_enable REVERSE_ENCODER_DIRECTION
+opt_enable MIN_SOFTWARE_ENDSTOP_Z
+
+# Lowrider gantry will drop for sure if Z is powered off
+opt_set DISABLE_INACTIVE_Z "false"
+
+opt_set SENSORLESS_HOMING
+#opt_set X_HOME_BUMP_MM "0"
+#opt_set Y_HOME_BUMP_MM "0"
+opt_set Z_HOME_BUMP_MM "0"
+opt_set Z_MIN_ENDSTOP_INVERTING "false"
+opt_enable IMPROVE_HOMING_RELIABILITY INDIVIDUAL_AXIS_HOMING_MENU
+
+# SKR 1.3 specific
+opt_set Y2_USE_ENDSTOP "_XMAX_"
+opt_set Z2_USE_ENDSTOP "_YMAX_"
+
+# Lowrider specific
+opt_set Z_HOMING_HEIGHT "0"
+opt_set HOMING_BACKOFF_MM "{ 20, 10, 1 }"
+opt_set Z_MIN_POS "-1"
+opt_set Z_MAX_POS "180"
+opt_set X_BED_SIZE 1275
+opt_set Y_BED_SIZE 2540
