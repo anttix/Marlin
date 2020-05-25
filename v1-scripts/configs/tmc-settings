@@ -1,0 +1,21 @@
+opt_enable MONITOR_DRIVER_STATUS
+opt_disable STEALTHCHOP_XY STEALTHCHOP_Z
+
+opt_set X_CURRENT "1700"
+opt_set Y_CURRENT "1700"
+opt_set Z_CURRENT "1700"
+opt_set X2_CURRENT "1700"
+opt_set Y2_CURRENT "1700"
+opt_set Z2_CURRENT "1700"
+
+# Increase hold current to 70%
+opt_set HOLD_MULTIPLIER 0.7
+
+opt_set X_MICROSTEPS "32"
+opt_set Y_MICROSTEPS "32"
+opt_set Z_MICROSTEPS "32"
+opt_set X2_MICROSTEPS "32"
+opt_set Y2_MICROSTEPS "32"
+opt_set Z2_MICROSTEPS "32"
+
+# opt_set CHOPPER_TIMING CHOPPER_DEFAULT_12V

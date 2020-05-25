@@ -1,3 +1,5 @@
+. $incdir/tmc-settings
+
 opt_set X_DRIVER_TYPE "TMC2209"
 opt_set Y_DRIVER_TYPE "TMC2209"
 opt_set Z_DRIVER_TYPE "TMC2209"
@@ -13,27 +15,7 @@ opt_set E4_DRIVER_TYPE "TMC2209"
 opt_set E5_DRIVER_TYPE "TMC2209"
 opt_disable Z3_DRIVER_TYPE E2_DRIVER_TYPE E3_DRIVER_TYPE E4_DRIVER_TYPE E5_DRIVER_TYPE
 
-opt_enable MONITOR_DRIVER_STATUS
-opt_disable STEALTHCHOP_XY STEALTHCHOP_Z
-
 # TMC2209 sensitivity setting is 255..0, 0 being the most insentive
 opt_set X_STALL_SENSITIVITY "27"
 opt_set Y_STALL_SENSITIVITY "27"
 opt_set Z_STALL_SENSITIVITY "40"
-
-opt_set X_CURRENT "1700"
-opt_set Y_CURRENT "1700"
-opt_set Z_CURRENT "1700"
-opt_set X2_CURRENT "1700"
-opt_set Y2_CURRENT "1700"
-opt_set Z2_CURRENT "1700"
-
-# Increase hold current to 70%
-opt_set HOLD_MULTIPLIER 0.7
-
-opt_set X_MICROSTEPS "32"
-opt_set Y_MICROSTEPS "32"
-opt_set Z_MICROSTEPS "32"
-opt_set X2_MICROSTEPS "32"
-opt_set Y2_MICROSTEPS "32"
-opt_set Z2_MICROSTEPS "32"
